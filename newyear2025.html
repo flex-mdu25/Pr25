@@ -71,7 +71,15 @@
             }
           ])
             .then(() => {
-              liff.closeWindow();
+              Swal.fire({
+                icon: 'success',
+                title: 'ส่งข้อความสำเร็จ!',
+                text: 'ข้อความของคุณถูกส่งแล้ว',
+                timer: 2000,
+                showConfirmButton: false
+              }).then(() => {
+                liff.closeWindow();
+              });
             })
             .catch((err) => {
               console.error("Error sending message:", err);
@@ -156,6 +164,15 @@
               }
             }
           ])
+            .then(() => {
+              Swal.fire({
+                icon: 'success',
+                title: 'แชร์ข้อความสำเร็จ!',
+                text: 'ข้อความของคุณถูกแชร์แล้ว',
+                timer: 2000,
+                showConfirmButton: false
+              });
+            })
             .catch((err) => {
               console.error("Error sharing target picker:", err);
               alert("เกิดข้อผิดพลาดในการแชร์ข้อความ");
